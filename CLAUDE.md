@@ -31,16 +31,18 @@ cp assets/icon-src.png assets/apple-touch-icon.png && sips -Z 180 assets/apple-t
 
 ## Deployment
 
-Hosted on GitHub Pages. Repo: `catalogfix-website` (public).
+Hosted on GitHub Pages. Repo: [Admin-CatalogFix/catalogfix-website](https://github.com/Admin-CatalogFix/catalogfix-website) (public). Git credentials are stored in the macOS keychain.
 
 To deploy changes:
 ```bash
-git add index.html
+git add -A
 git commit -m "your message here"
 git push
 ```
 
-Live at the custom domain once DNS is configured. The `CNAME` file (if present) holds the domain name.
+Custom domain: `catalogfix.com` (held in the `CNAME` file — don't delete it). DNS is managed at Squarespace and must point to GitHub Pages: A records on the apex to 185.199.108.153 / 185.199.109.153 / 185.199.110.153 / 185.199.111.153, and a `www` CNAME record to `admin-catalogfix.github.io`.
+
+Note: `Admin-CatalogFix.io` is an older, stale repo from a previous attempt — the live site is this repo.
 
 ## Brand Colors
 
