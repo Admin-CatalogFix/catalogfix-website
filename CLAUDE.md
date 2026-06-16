@@ -12,11 +12,12 @@ catalogfix-website/
 ├── robots.txt        ← allows all crawlers, points to sitemap
 ├── sitemap.xml       ← single-URL sitemap; update <lastmod> on content changes
 ├── assets/
-│   ├── logo.png             ← nav wordmark (490×130, cropped to content, displayed 113×30)
+│   ├── icon.png             ← nav icon mark, trimmed to content (458×247), displayed 44px tall
+│   ├── logo.png             ← nav wordmark (490×130, cropped to content, displayed 30px tall)
 │   ├── logo-src.png         ← original uncropped 500×500 wordmark
 │   ├── favicon.png          ← 48×48, generated from icon-src.png
 │   ├── apple-touch-icon.png ← 180×180, generated from icon-src.png
-│   ├── icon-src.png         ← original 500×500 CF icon mark (source of truth)
+│   ├── icon-src.png         ← original 500×500 CF icon mark (source of truth for icon.png + favicons)
 │   └── og-image.jpg         ← 1200×630 social share image
 └── CLAUDE.md         ← this file
 ```
@@ -65,7 +66,7 @@ Note: `Admin-CatalogFix.io` is an older, stale repo from a previous attempt — 
 
 ## Page Sections (in order)
 
-1. **Nav** — sticky, transparent over hero → solid dark navy on scroll. Logo is `assets/logo.png`. Mobile: full-screen hamburger overlay. Links: Services, How It Works, About, FAQ, Get in Touch.
+1. **Nav** — sticky, transparent over hero → solid dark navy on scroll. Logo is a horizontal lockup: `assets/icon.png` (CF mark) + `assets/logo.png` (wordmark), flex with `gap`. A `brightness(1.15)` filter lifts the navy ink on the dark bar. Mobile: full-screen hamburger overlay. Links: Services, How It Works, About, FAQ, Get in Touch.
 2. **Hero** (`#home`) — dark navy bg, large headline, subhead, two CTA buttons, marketplace list
 3. **Positioning** (`#what-we-do`) — "Not an agency" message + agency vs CatalogFix comparison table
 4. **Services** (`#services`) — tabbed: Amazon (13 items) | Walmart (6 items). Soft white bg. Tabs are ARIA-compliant (role=tablist/tab/tabpanel, arrow-key navigation).
@@ -94,7 +95,7 @@ Note: `Admin-CatalogFix.io` is an older, stale repo from a previous attempt — 
 The contact email is ROT13-encoded in JS to prevent bot scraping. Located near the bottom of `<script>`:
 
 ```js
-var enc = 'uryyb@pngnybtsvk.pbz';  // ← ROT13 of hello@catalogfix.com
+var enc = 'nqzva@pngnybtsvk.pbz';  // ← ROT13 of admin@catalogfix.com
 ```
 
 To update: go to rot13.com, encode the new email, paste the result here.
