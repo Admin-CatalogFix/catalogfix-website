@@ -56,6 +56,7 @@ Note: `Admin-CatalogFix.io` is an older, stale repo from a previous attempt — 
 | Medium Navy (accents, eyebrows) | `#223f5a` |
 | Primary Orange (CTAs, "Fix", highlights) | `#e88130` |
 | Deep Orange (hover states) | `#d3671d` |
+| Nav Bar Grey (light header background) | `#E8EAED` |
 
 ## Typography
 
@@ -66,7 +67,7 @@ Note: `Admin-CatalogFix.io` is an older, stale repo from a previous attempt — 
 
 ## Page Sections (in order)
 
-1. **Nav** — sticky, transparent over hero → solid dark navy on scroll. Logo is a horizontal lockup: `assets/icon.png` (CF mark) + `assets/logo.png` (wordmark), flex with `gap`. A `brightness(1.15)` filter lifts the navy ink on the dark bar. Mobile: full-screen hamburger overlay. Links: Services, How It Works, About, FAQ, Get in Touch.
+1. **Nav** — sticky, solid **light-grey bar** (`--navbar` `#E8EAED`) so the navy logo reads; hairline bottom border appears on scroll (`.solid`). Logo is a horizontal lockup: `assets/icon.png` (CF mark) + `assets/logo.png` (wordmark), flex with `gap`, no filter. Links are dark navy (`rgba(17,40,62,0.72)`), CTA stays orange. Mobile: full-screen **navy** hamburger overlay — inside it links flip back to light and the hamburger X turns white (`.nav-ham.open span`). Links: Services, How It Works, About, FAQ, Get in Touch.
 2. **Hero** (`#home`) — dark navy bg, large headline, subhead, two CTA buttons, marketplace list
 3. **Positioning** (`#what-we-do`) — "Not an agency" message + agency vs CatalogFix comparison table
 4. **Services** (`#services`) — tabbed: Amazon (13 items) | Walmart (6 items). Soft white bg. Tabs are ARIA-compliant (role=tablist/tab/tabpanel, arrow-key navigation).

@@ -97,6 +97,7 @@
   --navy-mid:    #223f5a;
   --orange:      #e88130;
   --orange-d:    #d3671d;
+  --navbar:      #E8EAED;   /* light grey nav bar so the navy logo reads */
 
   --f: 'Inter', 'Helvetica Neue', Arial, sans-serif;
 
@@ -209,11 +210,11 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
   align-items: center;
   justify-content: space-between;
   padding: 18px var(--x-pad);
+  background: var(--navbar);
   transition: background var(--t), box-shadow var(--t);
 }
 .nav.solid {
-  background: var(--navy);
-  box-shadow: 0 1px 0 rgba(255,255,255,0.07);
+  box-shadow: 0 1px 0 rgba(0,0,0,0.08);
 }
 
 /* Logo mark */
@@ -225,8 +226,6 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 .nav-logo img {
   width: auto;
   display: block;
-  /* Boost visibility of the navy portion on dark bg */
-  filter: brightness(1.15);
 }
 .nav-logo-icon { height: 44px; }
 .nav-logo-word { height: 30px; }
@@ -244,10 +243,10 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 .nav-list a {
   font-size: 14px;
   font-weight: 500;
-  color: rgba(246,246,246,0.68);
+  color: rgba(17,40,62,0.72);
   transition: color var(--t);
 }
-.nav-list a:hover { color: var(--white); }
+.nav-list a:hover { color: var(--navy); }
 
 /* CTA in nav — higher specificity overrides .nav-list a */
 .nav-list .nav-cta {
@@ -276,11 +275,13 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
   display: block;
   width: 22px;
   height: 2px;
-  background: var(--white);
+  background: var(--navy);
   border-radius: 2px;
-  transition: transform var(--t), opacity var(--t);
+  transition: transform var(--t), opacity var(--t), background var(--t);
   transform-origin: center;
 }
+/* Over the open full-screen navy overlay, switch the X to light */
+.nav-ham.open span { background: var(--white); }
 .nav-ham.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
 .nav-ham.open span:nth-child(2) { opacity: 0; }
 .nav-ham.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
@@ -298,6 +299,9 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
   }
   .nav-list.open { display: flex; }
   .nav-list a, .nav-list .nav-cta { font-size: 22px; }
+  /* Overlay is navy → links go light again */
+  .nav-list a { color: rgba(246,246,246,0.82); }
+  .nav-list a:hover { color: var(--white); }
   .nav-list .nav-cta { padding: 14px 32px; }
   .nav-ham { display: flex; }
 }
